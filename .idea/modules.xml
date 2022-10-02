@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/AlvaroSanchez_PMDM.iml" filepath="$PROJECT_DIR$/.idea/AlvaroSanchez_PMDM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LlamadasHerencia/LlamadasHerencia.iml" filepath="$PROJECT_DIR$/LlamadasHerencia/LlamadasHerencia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrabajadoresHerencia/TrabajadoresHerencia.iml" filepath="$PROJECT_DIR$/TrabajadoresHerencia/TrabajadoresHerencia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrigonometríaHerencia/TrigonometríaHerencia.iml" filepath="$PROJECT_DIR$/TrigonometríaHerencia/TrigonometríaHerencia.iml" />
     </modules>
   </component>
 </project>
