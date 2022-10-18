@@ -1,0 +1,35 @@
+Realiza una aplicación para el conteo de puntos de una aplicación Fantasy de futbol.
+Para ello el sistema necesita los siguientes requisitos
+--    • Una clase Participante, la cual representa cada uno de los jugadores que forman parte de la liga fantasy. La clase tiene los siguientes atributos: nombre, plantilla, puntos, presupuesto, id    -- • Una clase Administrador, la cual representa la persona que tiene la posibilidad de iniciar la liga. La clase tiene los siguientes atributos: id, nombre, clave
+--    • Una clase Administrador, la cual representa la persona que tiene la posibilidad de iniciar la liga. La clase tiene los siguientes atributos: id, nombre, clave
+--    • Una clase Jugador, la cual representa cada uno de los futbolistas que se pueden fichar para el equipo: id, nombre, valor, posición
+--    • Una clase Fantasy, la cual representa el juego. La clase tiene los siguientes atributos: conjunto de jugadores, conjunto de jugadores que se pueden fichar.
+La lógica del juego será la siguiente:
+--    - Cada jugador inicialmente tiene un presupuesto de 10.000.000€, del cual no se puede pasar, en caso contrario no podrá formar parte del juego
+    - Cada jugador tiene que fichar 6 jugadores para poder jugar con la siguiente disposición: 1 portero, 2 defensas, 2 medios y 1 delantero
+--    - Solo podrán jugar la liga aquellos participantes que tengan una plantilla completa
+--    - Cuando se inicia el juego se hace un conteo de los puntos de cada jugador y se suma a su conteo.
+--    - Para poder iniciar el juego, se necesita la autorización del administrador.
+
+Para ello se pide:
+--    - Crear 4 jugadores con los nombres que se quieran
+--    - Los 3 primeros equipos realizan fichajes válidos
+--    - El último equipo realiza fichajes y se queda con una plantilla de 5 jugadores
+--    - Crea un administrador con los datos que se quieran
+--    - Listar aquellos jugadores disponibles cuyo valor es superior a 3.000.000€
+--    - Iniciar el juego
+--    - Muestra el ganador con toda su información
+
+-- Para el examen se debe realizar una línea de herencia consistente.
+Tu deberás decidir los métodos que tendrá cada clase, teniendo en cuenta que
+    - Cada Participante puede:
+--        o Añadir jugadores a su plantilla
+--        o Listar información propia
+    - Fantasy puede:
+--        o Empezar un juego con el conteo de puntos, después de la validación de un administrador (pasar por parámetros un administrador válido)
+--        o Listar jugadores con un valor superior a 3.000.000€
+--        o Mostrar ganador
+
+Para poder hacer el examen contaréis con dos archivos:
+    - Jugadores.txt: cuenta con la lista de todos los jugadores fichables
+    - Puntuaciones.txt: cuenta con la lista de los jugadores, su id y la puntuación que tiene.
