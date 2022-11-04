@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.media.Image
@@ -7,7 +8,10 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
+import com.google.android.material.snackbar.Snackbar
 import java.io.File
 import kotlin.math.roundToInt
 
@@ -15,7 +19,7 @@ class GameActivity : AppCompatActivity(){
     private lateinit var buttonUp : ImageButton
     private lateinit var buttonDown : ImageButton
     private lateinit var fondo : LinearLayout
-
+    private var cartas : Array<Int> = arrayOf(R.drawable.cf, R.drawable.c1, R.drawable.c2, R.drawable.c3, R.drawable.c4, R.drawable.c5, R.drawable.c6, R.drawable.c7, R.drawable.c8, R.drawable.c9, R.drawable.c10, R.drawable.c11, R.drawable.c12, R.drawable.c13)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
@@ -25,45 +29,32 @@ class GameActivity : AppCompatActivity(){
 
     private fun acciones() {
         var numRandom : Int
+        var numRandom2 : Int
+        numRandom = ((Math.random() * 12)+1).toInt()
+        fondo.setBackgroundResource(cartas[numRandom])
         buttonUp.setOnClickListener(){
-            numRandom = ((Math.random() * 12)+1).roundToInt()
-            Toast.makeText(applicationContext,"$numRandom",Toast.LENGTH_SHORT).show()
+            numRandom2 = ((Math.random() * 12) + 1).toInt()
 
-            when(numRandom){
-                1 -> fondo.setBackgroundResource(R.drawable.c1)
-                2 -> fondo.setBackgroundResource(R.drawable.c2)
-                3 -> fondo.setBackgroundResource(R.drawable.c3)
-                4 -> fondo.setBackgroundResource(R.drawable.c4)
-                5 -> fondo.setBackgroundResource(R.drawable.c5)
-                6 -> fondo.setBackgroundResource(R.drawable.c6)
-                7 -> fondo.setBackgroundResource(R.drawable.c7)
-                8 -> fondo.setBackgroundResource(R.drawable.c8)
-                9 -> fondo.setBackgroundResource(R.drawable.c9)
-                10 -> fondo.setBackgroundResource(R.drawable.c10)
-                11 -> fondo.setBackgroundResource(R.drawable.c11)
-                12 -> fondo.setBackgroundResource(R.drawable.c12)
-                13 -> fondo.setBackgroundResource(R.drawable.c13)
-            }
-        }
-        buttonDown.setOnClickListener(){
-            numRandom = ((Math.random() * 12)+1).roundToInt()
-            Toast.makeText(applicationContext,"$numRandom",Toast.LENGTH_SHORT).show()
+            if (numRandom2 > numRandom){
+                println("MAYOR")
+                fondo.setBackgroundResource(cartas[numRandom2])
+            }else if (numRandom2 < numRandom){
+                println("MENOR")
+                fondo.setBackgroundResource(cartas[0])
 
-            when(numRandom){
-                1 -> fondo.setBackgroundResource(R.drawable.c1)
-                2 -> fondo.setBackgroundResource(R.drawable.c2)
-                3 -> fondo.setBackgroundResource(R.drawable.c3)
-                4 -> fondo.setBackgroundResource(R.drawable.c4)
-                5 -> fondo.setBackgroundResource(R.drawable.c5)
-                6 -> fondo.setBackgroundResource(R.drawable.c6)
-                7 -> fondo.setBackgroundResource(R.drawable.c7)
-                8 -> fondo.setBackgroundResource(R.drawable.c8)
-                9 -> fondo.setBackgroundResource(R.drawable.c9)
-                10 -> fondo.setBackgroundResource(R.drawable.c10)
-                11 -> fondo.setBackgroundResource(R.drawable.c11)
-                12 -> fondo.setBackgroundResource(R.drawable.c12)
-                13 -> fondo.setBackgroundResource(R.drawable.c13)
+                val intent = Intent(this, MainActivity::class.java)
+
+                var notificacion =
+                    Snackbar.make(buttonUp, "Juego terminado", Snackbar.LENGTH_INDEFINITE)
+                    notificacion.setAction("¿Volver al inicio?") {
+                        var intent: Intent = Intent(applicationContext, MainActivity::class.java)
+                        startActivity(intent)
+                }
+                notificacion.show()
+                startActivity(intent)
             }
+
+            numRandom = numRandom2
         }
     }
 
