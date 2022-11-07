@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cf"
-    android:gravity="center"
-    android:orientation="horizontal">
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textPuntos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:text="Puntos: 0"
+        android:textColor="@color/black"
+        android:textSize="60px"
+        android:layout_marginLeft="155dp"
+        android:textStyle="bold" />
 
     <ImageButton
         android:id="@+id/buttonUp"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_gravity="top"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/up" />
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/up"
+        android:background="@android:color/transparent"/>
 
     <ImageButton
         android:id="@+id/buttonDown"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_gravity="bottom"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/down" />
-</LinearLayout>
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="550dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/down"
+        android:background="@android:color/transparent"/>
+</FrameLayout>
