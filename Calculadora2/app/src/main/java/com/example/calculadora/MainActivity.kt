@@ -5,49 +5,68 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import com.example.calculadora.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var editTextResultado : EditText
-    private lateinit var buttonCero : Button
-    private lateinit var buttonUno : Button
-    private lateinit var buttonDos : Button
-    private lateinit var buttonTres : Button
-    private lateinit var buttonCuatro : Button
-    private lateinit var buttonCinco : Button
-    private lateinit var buttonSeis : Button
-    private lateinit var buttonSiete : Button
-    private lateinit var buttonOcho : Button
-    private lateinit var buttonNueve : Button
-    private var arrayNumeros : Array<Int> = arrayOf(R.id.buttonCero, R.id.buttonUno, R.id.buttonDos, R.id.buttonTres, R.id.buttonCuatro, R.id.buttonCinco, R.id.buttonSeis, R.id.buttonSiete, R.id.buttonOcho, R.id.buttonNueve)
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        instancias()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         acciones()
     }
 
     private fun acciones() {
-        buttonUno.setOnClickListener(){
-            editTextResultado.setText(buttonUno.text)
+        binding.buttonAc.setOnClickListener(){
+            binding.textViewResultado.setText("")
         }
 
-        arrayNumeros.forEach {
-
+        binding.buttonCero.setOnClickListener(){
+            binding.textViewResultado.append("0")
         }
-    }
 
-    private fun instancias() {
-        editTextResultado = this.findViewById(R.id.editTextResultado)
-        buttonCero = this.findViewById(R.id.buttonCero)
-        buttonUno = this.findViewById(R.id.buttonUno)
-        buttonDos = this.findViewById(R.id.buttonDos)
-        buttonTres = this.findViewById(R.id.buttonTres)
-        buttonCuatro = this.findViewById(R.id.buttonCuatro)
-        buttonCinco = this.findViewById(R.id.buttonCinco)
-        buttonSeis = this.findViewById(R.id.buttonSeis)
-        buttonSiete = this.findViewById(R.id.buttonSiete)
-        buttonOcho = this.findViewById(R.id.buttonOcho)
-        buttonNueve = this.findViewById(R.id.buttonNueve)
+        binding.buttonUno.setOnClickListener(){
+            binding.textViewResultado.append("1")
+        }
+
+        binding.buttonDos.setOnClickListener(){
+            binding.textViewResultado.append("2")
+        }
+
+        binding.buttonTres.setOnClickListener(){
+            binding.textViewResultado.append("3")
+        }
+
+        binding.buttonCuatro.setOnClickListener(){
+            binding.textViewResultado.append("4")
+        }
+
+        binding.buttonCinco.setOnClickListener(){
+            binding.textViewResultado.append("5")
+        }
+
+        binding.buttonSeis.setOnClickListener(){
+            binding.textViewResultado.append("6")
+        }
+
+        binding.buttonSiete.setOnClickListener(){
+            binding.textViewResultado.append("7")
+        }
+
+        binding.buttonOcho.setOnClickListener(){
+            binding.textViewResultado.append("8")
+        }
+
+        binding.buttonNueve.setOnClickListener(){
+            binding.textViewResultado.append("9")
+        }
+
+        binding.buttonDecimal.setOnClickListener(){
+            //if (editTextResultado.text.contains(".") == false){
+                editTextResultado.append(".")
+            //}
+        }
     }
 }

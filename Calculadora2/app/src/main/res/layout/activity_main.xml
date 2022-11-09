@@ -7,16 +7,17 @@
     android:background="@color/black"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextResultado"
+    <TextView
+        android:id="@+id/textViewResultado"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:gravity="bottom"
+        android:hint="0"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="70sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -174,7 +175,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:backgroundTint="@color/orange"
-            android:text="/"
+            android:text="-"
             android:textSize="40sp"
             app:cornerRadius="100dp" />
 

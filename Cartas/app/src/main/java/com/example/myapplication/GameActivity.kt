@@ -32,11 +32,12 @@ class GameActivity : AppCompatActivity(){
         acciones()
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun acciones() {
         var numRandom : Int
         var numRandom2 : Int
         var puntos : Int = 0
-        numRandom = (Math.random() * 13).toInt()
+        numRandom = ((Math.random() * 12).toInt())+1
         fondo.setBackgroundResource(cartas[numRandom])
 
         if (buttonDown.isPressed){
@@ -48,12 +49,13 @@ class GameActivity : AppCompatActivity(){
         }
 
         buttonUp.setOnClickListener(){
-            numRandom2 = (Math.random() * 13).toInt()
+            numRandom2 = ((Math.random() * 12).toInt())+1
             fondo.setBackgroundResource(cartas[numRandom2])
             if (numRandom2 > numRandom){
                 println("MAYOR")
                 puntos++
                 textPuntos.setText("Puntos: $puntos")
+
             }else if (numRandom2 < numRandom){
                 println("MENOR")
                 buttonUp.isEnabled = false
@@ -71,7 +73,7 @@ class GameActivity : AppCompatActivity(){
         }
 
         buttonDown.setOnClickListener(){
-            numRandom2 = (Math.random() * 13).toInt()
+            numRandom2 = ((Math.random() * 12).toInt())+1
             fondo.setBackgroundResource(cartas[numRandom2])
             if (numRandom2 < numRandom){
                 println("MENOR")
