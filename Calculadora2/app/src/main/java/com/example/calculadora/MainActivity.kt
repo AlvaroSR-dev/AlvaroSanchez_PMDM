@@ -3,13 +3,16 @@ package com.example.calculadora
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import com.example.calculadora.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var editTextResultado : EditText
     private lateinit var binding: ActivityMainBinding
+    private var num1 : Double = 0.0
+    private var num2 : Double = 0.0
+    private lateinit var operacion : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,9 +67,27 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonDecimal.setOnClickListener(){
-            //if (editTextResultado.text.contains(".") == false){
-                editTextResultado.append(".")
-            //}
+            if (!binding.textViewResultado.text.contains(".")){
+                binding.textViewResultado.append(".")
+            }
+        }
+
+        binding.buttonPositivoNegativo.setOnClickListener(){
+            var numNegativo : Double = binding.textViewResultado.text.toString().toDouble() * -1
+            binding.textViewResultado.setText(numNegativo.toString())
+        }
+
+        binding.buttonSumar.setOnClickListener(){
+            num1 = binding.textViewResultado.text.toString().toDouble()
+            binding.textViewResultado.setText("")
+            binding.textViewResultado.setHint("0")
+            operacion = "suma"
+        }
+
+        binding.buttonIgual.setOnClickListener(){
+            when (operacion) {
+                "suma" -> binding.textViewResultado.setText((num1 + num2).toString())
+            }
         }
     }
 }
