@@ -40,14 +40,6 @@ class GameActivity : AppCompatActivity(){
         numRandom = ((Math.random() * 12).toInt())+1
         fondo.setBackgroundResource(cartas[numRandom])
 
-        if (buttonDown.isPressed){
-            buttonDown.setImageResource(R.drawable.down_press)
-        }
-
-        if (buttonUp.isHovered){
-            buttonUp.setImageResource(R.drawable.up_press)
-        }
-
         buttonUp.setOnClickListener(){
             numRandom2 = ((Math.random() * 12).toInt())+1
             fondo.setBackgroundResource(cartas[numRandom2])
