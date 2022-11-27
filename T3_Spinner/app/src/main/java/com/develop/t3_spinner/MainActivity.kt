@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             Snackbar.make(binding.spinnerSimple,i.toString(),Snackbar.LENGTH_SHORT).show()
         }*/
 
-        binding.spinnerSimple.onItemSelectedListener = this;
+        binding.spinnerSimple.onItemSelectedListener = this
         binding.spinnerComplejo.onItemSelectedListener = this
         binding.botonAgregar.setOnClickListener {
             //arraySpinner.add(pais)
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     private fun asociarDatos() {
-        binding.spinnerSimple.adapter = adaptadorSencillo;
+        binding.spinnerSimple.adapter = adaptadorSencillo
         binding.spinnerComplejo.adapter = adaptadorPersonalizado
     }
 

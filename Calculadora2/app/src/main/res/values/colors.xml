@@ -2,6 +2,7 @@
 <resources>
     <color name="grey_main">#313131</color>
     <color name="grey_sec">#A0A0A0</color>
+    <color name="dark">#202020</color>
     <color name="orange">#F69906</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
