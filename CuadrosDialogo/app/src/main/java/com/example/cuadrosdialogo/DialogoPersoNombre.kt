@@ -47,6 +47,6 @@ class DialogoPersoNombre: DialogFragment() {
     }
 
     interface OnNombreListener{
-        fun onNombreSelected(dato: String){}
+        fun onNombreSelected(dato: String)
     }
 }

@@ -44,6 +44,7 @@ class DialogoMultiple: DialogFragment() {
                         "Selección finalizada ${asignaturasSeleccionadas.size}"
                     )
                     asignaturasSeleccionadas.forEach {Log.v("multiple","$it") }
+                    listener.onElementoListaSelected(asignaturasSeleccionadas.size)
                 }
             }
             .setNegativeButton("Cancelar") { dialogInterface, posicion ->
@@ -58,7 +59,7 @@ class DialogoMultiple: DialogFragment() {
 
 
     interface OnListaListener{
-        fun onElementoListaSelected(elemento: String)
+        fun onElementoListaSelected(elementos: Int)
     }
 
 

@@ -10,7 +10,7 @@ import android.widget.TimePicker
 import com.example.cuadrosdialogo.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener, DialogoPersoNombre.OnNombreListener, DialogoConfirmacion.OnConfirmacionListener, DialogoMultiple.OnListaListener{
+class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener, DatePickerDialog.OnDateSetListener, DialogoPersoNombre.OnNombreListener, DialogoMultiple.OnListaListener{
     private lateinit var binding: ActivityMainBinding
     private lateinit var hora: String
     private lateinit var fecha: String
@@ -51,11 +51,7 @@ class MainActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener, Da
         dialogoConfirmacion.show(supportFragmentManager, "" )
     }
 
-    override fun onElementoListaSelected(elemento: String) {
-        Snackbar.make(binding.root, elemento,Snackbar.LENGTH_SHORT ).show()
-    }
-
-    override fun onConfirmacionSelected(seleccionado: Boolean) {
-        TODO("Not yet implemented")
+    override fun onElementoListaSelected(elementos: Int) {
+        Snackbar.make(binding.root, elementos.toString(),Snackbar.LENGTH_SHORT ).show()
     }
 }
