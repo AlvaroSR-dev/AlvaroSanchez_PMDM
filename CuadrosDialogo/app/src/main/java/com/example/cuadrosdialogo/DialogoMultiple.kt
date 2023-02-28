@@ -26,7 +26,6 @@ class DialogoMultiple: DialogFragment() {
 
         var builder = AlertDialog.Builder(requireContext());
         builder.setTitle("¿De cuántas asignaturas te has evaluado?")
-            //.setMessage("Que opción quieres hacer")
             .setMultiChoiceItems(asignaturas, null) { dialogo, posicion, boolean ->
                 run {
                     Log.v("multiple","Posición seleccionada: ${posicion}")
